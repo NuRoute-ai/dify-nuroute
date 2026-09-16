@@ -1,0 +1,30 @@
+version: 0.1.0
+type: plugin
+author: "nuroute"
+name: "nuroute"
+label:
+  en_US: "NuRoute"
+description:
+  en_US: "Route chat completions through your NuRoute gateway — model \"auto\" lets NuRoute's routing engine pick the best model, or specify one directly."
+  zh_Hans: "通过您的 NuRoute 网关路由聊天补全请求 — 模型 \"auto\" 让 NuRoute 的路由引擎选择最佳模型，也可以直接指定模型。"
+icon: icon.svg
+privacy: PRIVACY.md
+created_at: "2026-09-16T00:00:00.000000000Z"
+resource:
+  memory: 268435456
+  permission:
+    model:
+      enabled: true
+      llm: true
+plugins:
+  models:
+    - "provider/nuroute.yaml"
+meta:
+  version: 0.0.1
+  arch:
+    - "amd64"
+    - "arm64"
+  runner:
+    language: "python"
+    version: "3.12"
+    entrypoint: "main"

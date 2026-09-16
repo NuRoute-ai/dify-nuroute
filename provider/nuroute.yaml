@@ -1,0 +1,103 @@
+provider: nuroute
+label:
+  en_US: NuRoute
+description:
+  en_US: Route chat completions through your NuRoute gateway.
+  zh_Hans: 通过您的 NuRoute 网关路由聊天补全请求。
+icon_small:
+  en_US: icon.svg
+icon_large:
+  en_US: icon.svg
+background: '#1a1512'
+help:
+  title:
+    en_US: Get your API key from your NuRoute project's API Keys page
+    zh_Hans: 从您 NuRoute 项目的 API Keys 页面获取 API Key
+  url:
+    en_US: https://nuroute.ai/docs
+supported_model_types:
+  - llm
+configurate_methods:
+  - customizable-model
+model_credential_schema:
+  model:
+    label:
+      en_US: Model Name
+      zh_Hans: 模型名称
+    placeholder:
+      en_US: '"auto" (NuRoute picks the best model), or a specific ID e.g. gpt-4o, claude-sonnet-4-6'
+      zh_Hans: '"auto"（由 NuRoute 选择最佳模型），或具体模型 ID，例如 gpt-4o、claude-sonnet-4-6'
+  credential_form_schemas:
+    - variable: endpoint_url
+      label:
+        en_US: NuRoute Gateway URL
+        zh_Hans: NuRoute 网关 URL
+      type: text-input
+      required: true
+      placeholder:
+        en_US: 'https://your-nuroute-gateway/v1'
+        zh_Hans: 'https://your-nuroute-gateway/v1'
+    - variable: api_key
+      label:
+        en_US: API Key
+        zh_Hans: API Key
+      type: secret-input
+      required: true
+      placeholder:
+        en_US: 'aicp-...'
+        zh_Hans: 'aicp-...'
+    - variable: mode
+      label:
+        en_US: Completion mode
+        zh_Hans: 对话类型
+      type: select
+      default: chat
+      required: false
+      show_on:
+        - variable: __model_type
+          value: llm
+      options:
+        - value: chat
+          label:
+            en_US: Chat
+            zh_Hans: 对话
+    - variable: context_size
+      label:
+        en_US: Model context size
+        zh_Hans: 模型上下文长度
+      type: text-input
+      default: '128000'
+      required: true
+      show_on:
+        - variable: __model_type
+          value: llm
+      placeholder:
+        en_US: Enter the context window of the model you'll route to
+        zh_Hans: 请输入所路由模型的上下文窗口大小
+    - variable: function_calling_type
+      label:
+        en_US: Function calling
+        zh_Hans: 函数调用
+      type: select
+      default: tool_call
+      required: false
+      show_on:
+        - variable: __model_type
+          value: llm
+      options:
+        - value: tool_call
+          label:
+            en_US: Support
+            zh_Hans: 支持
+        - value: no_call
+          label:
+            en_US: Not Support
+            zh_Hans: 不支持
+      help:
+        en_US: NuRoute's gateway supports OpenAI-style tools/tool_choice — leave this on unless the specific model you route to doesn't support tool calling.
+        zh_Hans: NuRoute 网关支持 OpenAI 风格的 tools/tool_choice — 除非您所路由的具体模型不支持函数调用，否则请保持开启。
+extra:
+  python:
+    provider_source: provider/nuroute.py
+    model_sources:
+      - "models/llm/llm.py"
