@@ -9,6 +9,8 @@ description:
   zh_Hans: "通过您的 NuRoute 网关路由聊天补全请求 — 模型 \"auto\" 让 NuRoute 的路由引擎选择最佳模型，也可以直接指定模型。"
 icon: icon.svg
 privacy: PRIVACY.md
+repo: https://github.com/NuRoute-ai/dify-nuroute
+contact: a.gupta@nuroute.ai
 created_at: "2026-09-16T00:00:00.000000000Z"
 resource:
   memory: 268435456
@@ -21,6 +23,7 @@ plugins:
     - "provider/nuroute.yaml"
 meta:
   version: 0.0.1
+  minimum_dify_version: "1.0.0"
   arch:
     - "amd64"
     - "arm64"

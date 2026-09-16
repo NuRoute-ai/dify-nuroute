@@ -19,6 +19,13 @@ directly (e.g. `gpt-4o`, `claude-sonnet-4-6`).
 Add it again with a different **Model Name** to make several NuRoute-routed models (e.g. `auto`
 and a pinned `claude-sonnet-4-6`) available side by side in Dify's model dropdown.
 
+## Usage
+
+Once added, select **NuRoute** as the model for any LLM node in a chatflow, workflow, or agent —
+it works exactly like any other model provider in Dify. For example, pick the `auto` model on a
+chatflow's LLM node to let NuRoute route each message to whichever model fits best, without
+committing to one model ID for the whole flow.
+
 ## What this doesn't do
 
 This is a model provider only — it sends chat completions through NuRoute, nothing else.
