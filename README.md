@@ -1,8 +1,13 @@
 # NuRoute
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Route Dify's LLM calls through your [NuRoute](https://nuroute.ai) gateway. Model `auto` lets
 NuRoute's routing engine pick the best model for each request; you can also specify a model ID
 directly (e.g. `gpt-4o`, `claude-sonnet-4-6`).
+
+Point a Dify node at `auto` and NuRoute predicts the cheapest model that can still answer it
+well, so you stop paying frontier prices for requests a cheaper model would handle just as well.
 
 ## Setup
 
@@ -42,7 +47,17 @@ reimplementation from scratch.
 
 https://github.com/NuRoute-ai/dify-nuroute
 
+## Documentation
+
+Full documentation: [nuroute.ai/docs](https://nuroute.ai/docs)
+
+How routing decisions are made: [nuroute.ai/docs/concepts/routing-performance](https://nuroute.ai/docs/concepts/routing-performance)
+
 ## Support
 
 For issues with this plugin, open an issue at the source repository above. For anything about
 your NuRoute gateway itself (routing, providers, billing), see [nuroute.ai/docs](https://nuroute.ai/docs).
+
+## License
+
+MIT
