@@ -26,14 +26,14 @@ and a pinned `claude-sonnet-4-6`) available side by side in Dify's model dropdow
 
 ## Usage
 
-Once added, select **NuRoute** as the model for any LLM node in a chatflow, workflow, or agent —
-it works exactly like any other model provider in Dify. For example, pick the `auto` model on a
+Once added, select **NuRoute** as the model for any LLM node in a chatflow, workflow, or agent.
+It works exactly like any other model provider in Dify. For example, pick the `auto` model on a
 chatflow's LLM node to let NuRoute route each message to whichever model fits best, without
 committing to one model ID for the whole flow.
 
 ## What this doesn't do
 
-This is a model provider only — it sends chat completions through NuRoute, nothing else.
+This is a model provider only, it sends chat completions through NuRoute and nothing else.
 Projects, routing configuration, policies, budgets, and API keys are all still managed from the
 NuRoute dashboard.
 
@@ -57,6 +57,10 @@ How routing decisions are made: [nuroute.ai/docs/concepts/routing-performance](h
 
 For issues with this plugin, open an issue at the source repository above. For anything about
 your NuRoute gateway itself (routing, providers, billing), see [nuroute.ai/docs](https://nuroute.ai/docs).
+
+## Community
+
+Questions, ideas, or show-and-tell: [github.com/NuRoute-ai/.github/discussions](https://github.com/NuRoute-ai/.github/discussions)
 
 ## License
 
